@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #4CAF50;
+            margin: 20px 0;
+        }
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .detected-objects {
+            background-color: #e7f5e9;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RecyCraft Object Detection</h1>
+        <p>Detect objects in an image</p>
+
+        <img src="{{ user_image }}" alt="Detected Objects">
+
+        <br><br>
+        <form action="/detect_object" target="_blank">
+            <input type="submit" value="Detect Object" />
+        </form>
+
+        {% if detected_objects %}
+            <div class="detected-objects">
+                <h2>Detected Objects</h2>
+                <p>{{ detected_objects }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
