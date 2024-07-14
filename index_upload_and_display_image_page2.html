@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .input-label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        #myFile {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .success-message {
+            color: green;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RecyCraft Object Detection</h1>
+        <p>Upload your image</p>
+
+        <form method="POST" enctype="multipart/form-data" action="/">
+            <div class="input-container">
+                <label for="myFile" class="input-label">Your inputted file:</label>
+                <input type="file" id="myFile" name="uploaded-file" accept=".jpg">
+            </div>
+            <input type="submit" class="button" value="Submit">
+        </form>
+
+        <br>
+        <p class="success-message">File uploaded successfully</p>
+        <form action="/show_image" target="_blank">
+            <input type="submit" class="button" value="Display Image">
+        </form>
+    </div>
+</body>
+</html>
